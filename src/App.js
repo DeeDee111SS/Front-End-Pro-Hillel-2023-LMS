@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Provider store={store}>
-          <TodoBox/>
+          <BaseTemplate/>
         </Provider>
       </BrowserRouter>
     </div>
