@@ -6,7 +6,7 @@ import hwReducer from './slices/homeworks';
 import { articlesApi } from './articlesApi';
 
 const rootReducer = combineReducers({
-    [articlesApi]: articlesApi.reducer,
+    [articlesApi.reducerPath]: articlesApi.reducer,
     authorization: authReducer,
     articles: artReducer,
     lessons: lessonsReducer,
