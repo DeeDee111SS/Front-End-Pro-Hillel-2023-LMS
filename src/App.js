@@ -3,9 +3,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from './store';
-// import BaseTemplate from './templates/BaseTemplate';
+import BaseTemplate from './templates/BaseTemplate';
 
-import Dashboard from './components/Dashboard';
+// import Dashboard from './components/Dashboard';
 
 
 function App() {  
@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Provider store={store}>
-          {/* <BaseTemplate/> */}
-          <Dashboard title={'Dashboard'}/>
+          <BaseTemplate title={'Dashboard'}/>
+          {/* <Dashboard title={'Dashboard'}/> */}
         </Provider>
       </BrowserRouter>
     </div>
