@@ -2,8 +2,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_ARTICLES_BASE_URL } from '../../utils/API_CONFIG';
 
 
-export const articlesApi = createApi({
-    reducerPath: 'articlesApi',
+export const singleArticlesApi = createApi({
+    reducerPath: 'singleArticlesApi',
     baseQuery: fetchBaseQuery({
         baseUrl: API_ARTICLES_BASE_URL,
     }),
@@ -14,10 +14,10 @@ export const articlesApi = createApi({
         }),
 
         getPostById: build.query({
-            query: (postId) => `posts/${postId}`
+            query: (postId= 1) => `posts/${postId}`
         }),
     })
 });
 
 
-export const { useGetPostsQuery, useGetPostByIdQuery } = articlesApi;
+export const { useGetPostsQuery, useGetPostByIdQuery } = singleArticlesApi;

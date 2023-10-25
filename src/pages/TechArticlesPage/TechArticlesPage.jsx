@@ -6,6 +6,8 @@ import Title from "../../components/Title";
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { capitalizeFirstLetter, articlePreview } from "../../utils/helperfunctions";
+import { Link } from "react-router-dom";
 
 function TechArticlesPage() {
     const [numberOfPosts, setNumberOfPosts] = useState('');
@@ -41,16 +43,18 @@ function TechArticlesPage() {
                                 p: 2,
                                 display: 'flex',
                                 flexDirection: 'column',
-                                height: 380,
+                                height: 340,
                             }}
                         >
-                            <Title>{post.title}</Title>
+                            <Title>{capitalizeFirstLetter(post.title)}</Title>
                             <Typography color="text.secondary" sx={{ flex: 1 }}>
-                                {post.body}
+                                {capitalizeFirstLetter(articlePreview(post.body))}
                             </Typography>
-                            <Button variant="contained" endIcon={<ArrowForwardIosIcon />}>
-                                Read
-                            </Button>
+                            <Link to={`/articles/${post.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <Button variant="contained" endIcon={<ArrowForwardIosIcon />}>
+                                    Read
+                                </Button>
+                            </Link>
                         </Paper>
                     </Grid>
                 ))} 
