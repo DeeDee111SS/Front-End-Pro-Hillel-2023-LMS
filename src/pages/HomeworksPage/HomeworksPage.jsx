@@ -1,5 +1,4 @@
-import { useGetPostsQuery } from "../../store/articlesApi";
-import { useState } from "react";
+import { useGetHomeworksQuery } from '../../store/homeworksApi';
 import Grid from '@mui/material/Grid';
 import { Paper } from "@mui/material";
 import Title from "../../components/Title";
@@ -9,13 +8,10 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { capitalizeFirstLetter, articlePreview } from "../../utils/helperfunctions";
 import { Link } from "react-router-dom";
 
-function TechArticlesPage() {
-    const [numberOfPosts, setNumberOfPosts] = useState('');
-    const {data, isLoading} = useGetPostsQuery(numberOfPosts);
+function HomeworksPage() {    
+    const {data, isLoading} = useGetHomeworksQuery();
 
     if(isLoading) return <h3>Loading ...</h3>;
-
-    const changeNumberOfPosts = ({target}) => setNumberOfPosts(target.value);
 
     return  <Grid container spacing={3}>
                 <Grid item xs={12} md={12} lg={12}>
@@ -27,17 +23,12 @@ function TechArticlesPage() {
                             height: 120,
                         }}
                     >
-                        <Title>Technical Articles for if you want to learn more</Title>
-                        <div className="Articles">
-                            <label>
-                                <span>Number for articles to show: |{numberOfPosts || 'all' }| :</span>
-                                <input type="number" onInput={changeNumberOfPosts} value={numberOfPosts}/>
-                            </label>
-                        </div>
+                        <Title>Homeworks</Title>
+                        
                     </Paper>
                 </Grid>   
-                {data.map(post => (
-                    <Grid item xs={12} md={4} lg={3} key={post.id}>
+                {data.map(hw => (
+                    <Grid item xs={12} md={4} lg={3} key={hw.id}>
                         <Paper
                             sx={{
                                 p: 2,
@@ -46,11 +37,11 @@ function TechArticlesPage() {
                                 height: 340,
                             }}
                         >
-                            <Title>{capitalizeFirstLetter(post.title)}</Title>
+                            <Title>{capitalizeFirstLetter(hw.title)}</Title>
                             <Typography color="text.secondary" sx={{ flex: 1 }}>
-                                {capitalizeFirstLetter(articlePreview(post.body))}
+                                {capitalizeFirstLetter(articlePreview(hw.description))}
                             </Typography>
-                            <Link to={`/articles/${post.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <Link to={`/articles/${hw.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Button variant="contained" endIcon={<ArrowForwardIosIcon />}>
                                     Read
                                 </Button>
@@ -61,5 +52,5 @@ function TechArticlesPage() {
             </Grid>    
 }
 
-export default TechArticlesPage;
+export default HomeworksPage;
 

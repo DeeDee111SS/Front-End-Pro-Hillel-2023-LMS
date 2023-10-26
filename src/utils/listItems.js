@@ -71,14 +71,14 @@ export const MainListItems = () => {
           <ListItemText primary="Lessons" />
         </ListItemButton>
       </List>
-      <List component="div" disablePadding>
+      <Link to="/homeworks" style={{ textDecoration: 'none', color: 'inherit' }}>
         <ListItemButton sx={{ pl: 4 }}>
           <ListItemIcon>
             <HomeWorkSharpIcon />
           </ListItemIcon>
           <ListItemText primary="Homeworks" />
         </ListItemButton>
-      </List>
+      </Link> 
     </Collapse>
 
       <ListItemButton onClick={handleClickReactCourse}>
@@ -98,13 +98,15 @@ export const MainListItems = () => {
           </ListItemButton>
         </List>
         <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <HomeWorkSharpIcon />
-            </ListItemIcon>
-            <ListItemText primary="Homeworks" />
-          </ListItemButton>
-        </List>
+          <Link to="/homeworks" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <ListItemButton sx={{ pl: 4 }}>
+              <ListItemIcon>
+                <HomeWorkSharpIcon />
+              </ListItemIcon>
+              <ListItemText primary="Homeworks" />
+            </ListItemButton>
+          </Link> 
+        </List>        
       </Collapse> 
   </React.Fragment>
 );}
