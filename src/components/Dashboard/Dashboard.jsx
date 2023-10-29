@@ -7,26 +7,38 @@ import Chart from '../Chart';
 import Deposits from '../Deposits';
 import Orders from '../Orders';
 
+import DoughnutChart from '../DoughnutChart';
+import HorizontalBarChart from '../HorizontalBarChart/HorizontalBarChart';
 
 
 export default function Dashboard() {
-  
-  
 
-  return (
-    
+  return (    
       <Grid container spacing={3}>
         {/* Chart */}
-        <Grid item xs={12} md={8} lg={9}>
+        <Grid item xs={12} md={8} lg={4}>
           <Paper
             sx={{
               p: 2,
               display: 'flex',
               flexDirection: 'column',
-              height: 240,
+              height: 540,
             }}
           >
-            <Chart />
+            <DoughnutChart />
+          </Paper>
+        </Grid>
+        {/* Chart */}
+        <Grid item xs={12} md={8} lg={8}>
+          <Paper
+            sx={{
+              p: 2,
+              display: 'flex',
+              flexDirection: 'column',
+              height: 540,
+            }}
+          >
+            <HorizontalBarChart />
           </Paper>
         </Grid>
         {/* Recent Deposits */}
