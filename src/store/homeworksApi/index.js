@@ -1,16 +1,15 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { API_HOMEWORKS_BASE_URL } from '../../utils/API_CONFIG';
-
+import { API_LESSONS_AND_HOMEWORKS_BASE_URL } from '../../utils/API_CONFIG';
 
 export const homeworksApi = createApi({
     reducerPath: 'homeworksApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: API_HOMEWORKS_BASE_URL,
+        baseUrl: API_LESSONS_AND_HOMEWORKS_BASE_URL,
     }),
 
     endpoints: (build) => ({
         getHomeworks: build.query({
-            query: () => 'lessons'
+            query: () => 'homeworks'
         }),
 
         getHomeworkById: build.query({
@@ -18,6 +17,5 @@ export const homeworksApi = createApi({
         }),
     })
 });
-
 
 export const { useGetHomeworksQuery, useGetHomeworkByIdQuery } = homeworksApi;

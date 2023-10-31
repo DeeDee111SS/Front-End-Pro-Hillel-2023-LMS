@@ -14,8 +14,8 @@ import Container from '@mui/material/Container';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { MainListItems, secondaryListItems } from '../../utils/listItems'; // must be changed
-
+import MainListItems from '../../components/Dashboard/MainListItems';
+import SecondaryListItems from '../../components/Dashboard/SecondaryListItems';
 import Copyright from '../../components/Copyright';
 import AppBar from '../../components/Dashboard/AppBar';
 import Drawer from '../../components/Dashboard/Drawer';
@@ -85,7 +85,7 @@ export default function BaseTemplate(props) {
           <List component="nav">
             <MainListItems/>
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            <SecondaryListItems/>
           </List>
         </Drawer>
         <Box

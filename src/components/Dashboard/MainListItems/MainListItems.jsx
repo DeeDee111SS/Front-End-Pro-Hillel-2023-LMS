@@ -2,7 +2,6 @@ import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 // import BarChartIcon from '@mui/icons-material/BarChart';
 import List from '@mui/material/List';
@@ -11,7 +10,6 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import HomeWorkSharpIcon from '@mui/icons-material/HomeWorkSharp';
-import ArticleSharpIcon from '@mui/icons-material/ArticleSharp';
 import ImportContactsSharpIcon from '@mui/icons-material/ImportContactsSharp';
 import JavascriptIcon from '@mui/icons-material/Javascript';
 import PersonSharpIcon from '@mui/icons-material/PersonSharp';
@@ -64,21 +62,25 @@ export const MainListItems = () => {
     </ListItemButton>
     <Collapse in={openJs} timeout="auto" unmountOnExit>
       <List component="div" disablePadding>
-        <ListItemButton sx={{ pl: 4 }}>
-          <ListItemIcon>
-            <ImportContactsSharpIcon />
-          </ListItemIcon>
-          <ListItemText primary="Lessons" />
-        </ListItemButton>
+        <Link to="/lessons" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ListItemButton sx={{ pl: 4 }}>
+            <ListItemIcon>
+              <ImportContactsSharpIcon />
+            </ListItemIcon>
+            <ListItemText primary="Lessons" />
+          </ListItemButton>
+        </Link> 
       </List>
-      <Link to="/homeworks" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <ListItemButton sx={{ pl: 4 }}>
-          <ListItemIcon>
-            <HomeWorkSharpIcon />
-          </ListItemIcon>
-          <ListItemText primary="Homeworks" />
-        </ListItemButton>
-      </Link> 
+      <List component="div" disablePadding>
+        <Link to="/homeworks" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ListItemButton sx={{ pl: 4 }}>
+            <ListItemIcon>
+              <HomeWorkSharpIcon />
+            </ListItemIcon>
+            <ListItemText primary="Homeworks" />
+          </ListItemButton>
+        </Link> 
+      </List>
     </Collapse>
 
       <ListItemButton onClick={handleClickReactCourse}>
@@ -90,12 +92,14 @@ export const MainListItems = () => {
       </ListItemButton>
       <Collapse in={openReact} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <ImportContactsSharpIcon />
-            </ListItemIcon>
-            <ListItemText primary="Lessons" />
-          </ListItemButton>
+            <Link to="/lessons" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <ListItemButton sx={{ pl: 4 }}>
+                    <ListItemIcon>
+                        <ImportContactsSharpIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Lessons" />
+                </ListItemButton>
+            </Link>
         </List>
         <List component="div" disablePadding>
           <Link to="/homeworks" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -111,20 +115,4 @@ export const MainListItems = () => {
   </React.Fragment>
 );}
 
-
-
-export const secondaryListItems = (
-  <React.Fragment>
-    <ListSubheader component="div" inset>
-      Additions
-    </ListSubheader>
-    <Link to="/articles" style={{ textDecoration: 'none', color: 'inherit' }}>
-      <ListItemButton>
-        <ListItemIcon>
-          <ArticleSharpIcon />
-        </ListItemIcon>
-        <ListItemText primary="Tech Articles" />
-      </ListItemButton>
-    </Link>    
-  </React.Fragment>
-);
+export default MainListItems;
