@@ -22,7 +22,7 @@ export default function Dashboard() {
               p: 2,
               display: 'flex',
               flexDirection: 'column',
-              height: 460,
+              height: 580,
             }}
           >
             <DoughnutChart />
@@ -35,7 +35,7 @@ export default function Dashboard() {
               p: 2,
               display: 'flex',
               flexDirection: 'column',
-              height: 460,
+              height: 580,
             }}
           >
             <HorizontalBarChart />

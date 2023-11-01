@@ -2,6 +2,7 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { doughnutChartData } from '../../utils/CHART_DATA';
+import Title from '../Title';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -35,12 +36,19 @@ export const options = {
       position: 'top',
     },
     title: {
-      display: true,
+      display: false,
       text: 'Homeworks quality',
     },
   },
 };
 
 export default function DoughnutChart() {
-return <Doughnut options={options} data={data} />;
+return (
+  <React.Fragment>
+    <Title>Homeworks quality</Title>
+    <Doughnut options={options} data={data} />
+  </React.Fragment>
+)
+
+;
 }

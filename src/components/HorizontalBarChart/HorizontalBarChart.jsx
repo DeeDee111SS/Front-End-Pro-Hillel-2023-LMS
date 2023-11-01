@@ -10,6 +10,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { horizontalBarChartLabels, horizontalBarChartLabelsData } from '../../utils/CHART_DATA';
+import MyTitle from '../Title';
 
 ChartJS.register(
   CategoryScale,
@@ -33,12 +34,16 @@ export const options = {
       position: 'top',
     },
     title: {
-      display: true,
+      display: false,
       text: 'Rating for the course',
-      fontSize: 22,
     },
   },
   maintainAspectRatio: false,
+  layout: {
+    padding: {
+    bottom: 42, // Здесь можно задать отступ снизу в пикселях
+  },
+  }
 };
 
 const labels = horizontalBarChartLabels;
@@ -63,7 +68,12 @@ export const data = {
 };
 
 function HorizontalBarChart() {
-  return <Bar options={options} data={data} height={420}/>;
+  return (
+    <React.Fragment>
+      <MyTitle>Rating for the course</MyTitle>
+      <Bar options={options} data={data} height={420}/>
+    </React.Fragment>
+  );
 }
 
 export default HorizontalBarChart;
