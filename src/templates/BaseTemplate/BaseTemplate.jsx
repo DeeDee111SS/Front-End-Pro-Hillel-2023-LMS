@@ -63,7 +63,7 @@ export default function BaseTemplate(props) {
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
+                <NotificationsIcon />   {/* This is bell with num 4 */}
               </Badge>
             </IconButton>
           </Toolbar>
