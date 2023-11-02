@@ -27,7 +27,7 @@ function HomeworksPage() {
                         
                     </Paper>
                 </Grid>   
-                {data.map(hw => (
+                {data.slice().reverse().map(hw => (
                     <Grid item xs={12} md={4} lg={3} key={hw.id}>
                         <Paper
                             sx={{
@@ -37,13 +37,13 @@ function HomeworksPage() {
                                 height: 340,
                             }}
                         >
-                            <Title>{capitalizeFirstLetter(hw.title)}</Title>
+                            <Title>#{hw.id} {capitalizeFirstLetter(hw.title)}</Title>
                             <Typography color="text.secondary" sx={{ flex: 1 }}>
                                 {capitalizeFirstLetter(articlePreview(hw.description))}
                             </Typography>
-                            <Link to={`/articles/${hw.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <Link to={`/homeworks/${hw.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Button variant="contained" endIcon={<ArrowForwardIosIcon />}>
-                                    Read
+                                    Go to homework
                                 </Button>
                             </Link>
                         </Paper>

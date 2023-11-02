@@ -1,19 +1,19 @@
-import * as React from 'react';
+// import * as React from 'react';
+import React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-// import BarChartIcon from '@mui/icons-material/BarChart';
 import List from '@mui/material/List';
 import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import HomeWorkSharpIcon from '@mui/icons-material/HomeWorkSharp';
 import ImportContactsSharpIcon from '@mui/icons-material/ImportContactsSharp';
-import JavascriptIcon from '@mui/icons-material/Javascript';
 import PersonSharpIcon from '@mui/icons-material/PersonSharp';
 import { Link } from 'react-router-dom';
+import { ReactComponent as JsCustomIcon } from '../../../assets/icons/JsCustomIcon.svg';
+import { ReactComponent as ReactCustomIcon } from '../../../assets/icons/ReactCustomIcon.svg';
 
 export const MainListItems = () => {
 
@@ -43,19 +43,12 @@ export const MainListItems = () => {
       <ListItemIcon>
         <PersonSharpIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Profile" />
     </ListItemButton>
-
-    {/* <ListItemButton>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Reports" />
-    </ListItemButton> */}
 
     <ListItemButton onClick={handleClickJsCourse}>
       <ListItemIcon>
-        <JavascriptIcon />
+        <JsCustomIcon />
       </ListItemIcon>
       <ListItemText primary="JS Course" />
       {openJs ? <ExpandLess /> : <ExpandMore />}
@@ -85,7 +78,7 @@ export const MainListItems = () => {
 
       <ListItemButton onClick={handleClickReactCourse}>
         <ListItemIcon>
-          <InboxIcon />
+          <ReactCustomIcon />
         </ListItemIcon>
         <ListItemText primary="React Course" />
         {openReact ? <ExpandLess /> : <ExpandMore />}

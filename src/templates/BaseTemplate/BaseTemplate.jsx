@@ -19,6 +19,11 @@ import AppBar from '../../components/Dashboard/AppBar';
 import Drawer from '../../components/Dashboard/Drawer';
 import { defaultTheme } from '../../utils/MUI_CONFIG';
 import AppRoutes from '../../components/AppRoutes/AppRoutes';
+import { Button } from '@mui/material';
+
+
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 export default function BaseTemplate(props) {
@@ -59,10 +64,23 @@ export default function BaseTemplate(props) {
             >
               {title}
             </Typography>
+            
+            <IconButton color="inherit">             
+                <PersonOutlineIcon />               
+            </IconButton>
+
+            {/* <Button variant="contained" startIcon={<PersonOutlineIcon />}>
+              John Doe
+            </Button> */}
+
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />   {/* This is bell with num 4 */}
               </Badge>
+            </IconButton>
+
+            <IconButton color="inherit">             
+                <LogoutIcon />               
             </IconButton>
           </Toolbar>
         </AppBar>

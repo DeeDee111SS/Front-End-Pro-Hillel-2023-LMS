@@ -27,7 +27,7 @@ function LessonsPage() {
                         
                     </Paper>
                 </Grid>   
-                {data.map(lesson => (
+                {data.slice().reverse().map(lesson => (
                     <Grid item xs={12} md={4} lg={3} key={lesson.id}>
                         <Paper
                             sx={{
@@ -37,13 +37,13 @@ function LessonsPage() {
                                 height: 340,
                             }}
                         >
-                            <Title>{capitalizeFirstLetter(lesson.title)}</Title>
+                            <Title>#{lesson.id} {capitalizeFirstLetter(lesson.title)}</Title>
                             <Typography color="text.secondary" sx={{ flex: 1 }}>
                                 {capitalizeFirstLetter(articlePreview(lesson.description))}
                             </Typography>
-                            <Link to={`/articles/${lesson.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <Link to={`/lessons/${lesson.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Button variant="contained" endIcon={<ArrowForwardIosIcon />}>
-                                    Read
+                                    Go to lesson
                                 </Button>
                             </Link>
                         </Paper>
