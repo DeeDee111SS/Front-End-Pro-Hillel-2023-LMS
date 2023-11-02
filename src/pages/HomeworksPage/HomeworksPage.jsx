@@ -13,20 +13,7 @@ function HomeworksPage() {
 
     if(isLoading) return <h3>Loading ...</h3>;
 
-    return  <Grid container spacing={3}>
-                <Grid item xs={12} md={12} lg={12}>
-                    <Paper
-                        sx={{
-                            p: 2,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            height: 120,
-                        }}
-                    >
-                        <Title>Homeworks</Title>
-                        
-                    </Paper>
-                </Grid>   
+    return  <Grid container spacing={3}>                 
                 {data.slice().reverse().map(hw => (
                     <Grid item xs={12} md={4} lg={3} key={hw.id}>
                         <Paper

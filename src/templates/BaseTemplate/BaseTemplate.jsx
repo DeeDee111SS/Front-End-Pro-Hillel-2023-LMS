@@ -22,14 +22,17 @@ import AppRoutes from '../../components/AppRoutes/AppRoutes';
 // import { Button } from '@mui/material';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useLocation } from 'react-router-dom';
+import { routeToTitle } from '../../utils/TITLE_CONFIG';
 
 
-export default function BaseTemplate(props) {
+export default function BaseTemplate() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
-  };
-  const {title} = props;
+  };  
+  const location = useLocation();
+  const { pathname } = location;
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -60,7 +63,7 @@ export default function BaseTemplate(props) {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              {title}
+              {routeToTitle[pathname]}
             </Typography>
             
             <IconButton color="inherit">             

@@ -27,11 +27,11 @@ function TechArticlesPage() {
                             height: 120,
                         }}
                     >
-                        <Title>Technical Articles for if you want to learn more</Title>
+                        <Title>... If you want to learn more</Title>
                         <div className="Articles">
                             <label>
-                                <span>Number for articles to show: |{numberOfPosts || 'all' }| :</span>
-                                <input type="number" onInput={changeNumberOfPosts} value={numberOfPosts}/>
+                                <span>Number for articles to show: </span>
+                                <input type="number" onInput={changeNumberOfPosts} value={numberOfPosts} placeholder="all"/>
                             </label>
                         </div>
                     </Paper>

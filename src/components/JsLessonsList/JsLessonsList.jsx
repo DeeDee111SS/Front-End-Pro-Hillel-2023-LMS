@@ -10,16 +10,11 @@ import { useGetLessonsQuery } from '../../store/lessonsApi';
 import { capitalizeFirstLetter, formatDate } from "../../utils/HELPER_FUNCS";
 import Button from '@mui/material/Button';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import MUILink from '@mui/material/Link';
 
 export default function JsLessonsList() {
   const {data, isLoading} = useGetLessonsQuery();
 
   if(isLoading) return <h3>Loading ...</h3>;
-
-  function preventDefault(event) {
-    event.preventDefault();
-  }
 
   return (
     <React.Fragment>
@@ -48,12 +43,10 @@ export default function JsLessonsList() {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
-      <MUILink color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        <Link to={'/lessons'} style={{ textDecoration: 'none', color: 'inherit' }}>
-          Go to Lessons page
-        </Link>
-      </MUILink>
+      </Table>      
+      <Link to={'/lessons'} >
+        Go to Lessons page
+      </Link>      
     </React.Fragment>
   );
 }

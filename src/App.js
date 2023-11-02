@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Provider store={store}>
-          <BaseTemplate title={'Dashboard'}/>
+          <BaseTemplate />
           {/* <Dashboard title={'Dashboard'}/> */}
         </Provider>
       </BrowserRouter>
