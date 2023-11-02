@@ -23,7 +23,7 @@ import AppRoutes from '../../components/AppRoutes/AppRoutes';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useLocation } from 'react-router-dom';
-import { routeToTitle } from '../../utils/TITLE_CONFIG';
+import { routeToTitle } from '../../utils/TITLE_CONFIG.js';
 
 
 export default function BaseTemplate() {
