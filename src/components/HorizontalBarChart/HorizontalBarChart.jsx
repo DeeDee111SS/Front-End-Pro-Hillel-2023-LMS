@@ -40,9 +40,9 @@ export const options = {
   },
   maintainAspectRatio: false,
   layout: {
-    padding: {
-    bottom: 42, // Здесь можно задать отступ снизу в пикселях
-  },
+      padding: {
+      bottom: 42,
+    },
   }
 };
 

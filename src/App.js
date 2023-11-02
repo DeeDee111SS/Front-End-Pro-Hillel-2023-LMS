@@ -7,7 +7,6 @@ import BaseTemplate from './templates/BaseTemplate';
 
 // import Dashboard from './components/Dashboard';
 
-
 function App() {  
   return (
     <div className="App">
