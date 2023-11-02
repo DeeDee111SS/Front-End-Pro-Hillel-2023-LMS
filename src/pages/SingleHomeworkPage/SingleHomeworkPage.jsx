@@ -5,7 +5,7 @@ import Title from "../../components/Title";
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { capitalizeFirstLetter } from "../../utils/helperfunctions";
+import { capitalizeFirstLetter, formatDate } from "../../utils/HELPER_FUNCS";
 import { useParams } from 'react-router-dom'; 
 import { useGetHomeworkByIdQuery } from '../../store/homeworksApi';
 import { Link } from "react-router-dom";
@@ -28,6 +28,12 @@ function SingleHomeworkPage() {
                             }}
                         >
                             <Title>Homework #{data.id} {capitalizeFirstLetter(data.title)}</Title>
+                            <Typography color="text.secondary" sx={{ flex: 0 }}>
+                                Date: {formatDate(data.createdAt)}
+                            </Typography>
+                            <Typography color="text.primary" sx={{ flex: 0 }}>
+                                Description:
+                            </Typography>
                             <Typography color="text.secondary" sx={{ flex: 1 }}>
                                {capitalizeFirstLetter(data.description)}
                             </Typography>

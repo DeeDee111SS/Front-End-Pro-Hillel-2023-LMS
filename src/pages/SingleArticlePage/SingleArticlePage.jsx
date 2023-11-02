@@ -5,7 +5,7 @@ import Title from "../../components/Title";
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { capitalizeFirstLetter } from "../../utils/helperfunctions";
+import { capitalizeFirstLetter } from "../../utils/HELPER_FUNCS";
 import { useParams } from 'react-router-dom'; 
 import { useGetPostByIdQuery } from '../../store/articlesApi';
 import { Link } from "react-router-dom";

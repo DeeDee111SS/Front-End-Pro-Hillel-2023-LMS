@@ -5,7 +5,7 @@ import Title from "../../components/Title";
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { capitalizeFirstLetter, articlePreview } from "../../utils/helperfunctions";
+import { capitalizeFirstLetter, articlePreview, formatDate } from "../../utils/HELPER_FUNCS";
 import { Link } from "react-router-dom";
 
 function HomeworksPage() {    
@@ -38,6 +38,12 @@ function HomeworksPage() {
                             }}
                         >
                             <Title>#{hw.id} {capitalizeFirstLetter(hw.title)}</Title>
+                            <Typography color="text.secondary" sx={{ flex: 0 }}>
+                                Date: {formatDate(hw.createdAt)}
+                            </Typography>
+                            <Typography color="text.primary" sx={{ flex: 0 }}>
+                                Description:
+                            </Typography>
                             <Typography color="text.secondary" sx={{ flex: 1 }}>
                                 {capitalizeFirstLetter(articlePreview(hw.description))}
                             </Typography>

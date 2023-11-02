@@ -6,7 +6,7 @@ import Title from "../../components/Title";
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { capitalizeFirstLetter, articlePreview } from "../../utils/helperfunctions";
+import { capitalizeFirstLetter, articlePreview } from "../../utils/HELPER_FUNCS";
 import { Link } from "react-router-dom";
 
 function TechArticlesPage() {

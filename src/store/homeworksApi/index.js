@@ -13,7 +13,7 @@ export const homeworksApi = createApi({
         }),
 
         getHomeworkById: build.query({
-            query: (hwId= 1) => `homeworks/${hwId}`
+            query: (hwId) => `homeworks/${hwId}`
         }),
     })
 });
